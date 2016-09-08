@@ -21,6 +21,14 @@ var vueFeathers = require('vue-feathers')
 Vue.use(vueFeathers)
 ```
 
+If you want to use the standard `feather-authentication` plugin, you can just pass the [authentication parameters](http://docs.feathersjs.com/authentication/readme.html#client-side) during the initialisation:
+
+``` js
+Vue.use(vueFeathers, {
+  auth: {storage: window.localStorage}
+})
+```
+
 Now in every component you get a new property called `$services`, which allows you to interact with all of your Feathers services:
 
 ``` js

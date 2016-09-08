@@ -1,6 +1,6 @@
 {
   "name": "vue-feathers",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Integration with the Feathers framework for Vue.js",
   "main": "vue-feathers.js",
   "repository": {
@@ -20,5 +20,6 @@
   "dependencies": {
     "feathers": "*",
     "feathers-socketio": "*"
-  }
+  },
+  "devDependencies": {}
 }

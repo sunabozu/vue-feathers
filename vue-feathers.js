@@ -9,7 +9,7 @@
   var server = feathers().configure(socketio(socket))
 
   var plugin = {
-    install: function(Vue) {
+    install: function(Vue, opts) {
       // Every component will have this
       Vue.mixin({
         created: function() {
@@ -46,6 +46,14 @@
           }
         }
       })
+
+      if(opts && opts.auth) {
+        var authentication = require('feathers-authentication/client')
+        var hooks = require('feathers-hooks')
+
+        server.configure(hooks())
+        server.configure(authentication(opts.auth))
+      }
     }
   }
 
