@@ -1,6 +1,7 @@
 # vue-feathers
 
-> Integration with the Feathers framework for Vue.js
+> [Feathers](http://feathersjs.com/) is a minimalist real-time web framework written in JavaScript. 
+> Vue-Feathers is a plugin for Vue.js that integrates it with Feathers.
 
 **NOTE:** It's supposed to be compatible both with Vue 1.x and 2.x. It requires IE9+ or Safari 5+
 
