@@ -4,12 +4,13 @@
   var plugin = {
     install: function(Vue, opts) {
       var feathers = require('feathers/client')
-
+      var hooks = require('feathers-hooks')
       var socketio = require('feathers-socketio/client')
       var io = require('socket.io-client')
 
       var socket = io(opts.host)
       var server = feathers()
+      .configure(hooks())
       .configure(socketio(socket))
 
       // Every component will have this
