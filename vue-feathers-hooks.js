@@ -38,6 +38,9 @@
 
         beforeDestroy: function() {
           // Removing the events
+          if(!this.$options || !this.$options.feathers)
+            return
+          
           var keys = Object.keys(this.$options.feathers) // services, IE9+
           for(var i = 0; i < keys.length; i++) {
             var service = this.$options.feathers[keys[i]]
