@@ -25,7 +25,7 @@ Vue.use(vueFeathers)
 If you're using hooks on the client, you should include different version of this plugin:
 
 ``` js
-import vueFeathers from 'vue-feathers/vue-feathers-hooks'
+var vueFeathers = require('vue-feathers/vue-feathers-hooks')
 ```
 
 If you want to use the standard `feather-authentication` plugin, you can just pass the [authentication parameters](http://docs.feathersjs.com/authentication/readme.html#client-side) during the initialisation:
