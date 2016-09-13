@@ -1,6 +1,6 @@
 {
   "name": "vue-feathers",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Integration with the Feathers framework for Vue.js",
   "main": "vue-feathers.js",
   "repository": {
