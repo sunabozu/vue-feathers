@@ -2,15 +2,7 @@
   'use strict'
 
   var plugin = {
-    install: function(Vue, opts) {
-      var feathers = require('feathers/client')
-
-      var socketio = require('feathers-socketio/client')
-      var io = require('socket.io-client')
-
-      var socket = io(opts.host)
-      var server = feathers()
-      .configure(socketio(socket))
+    install: function(Vue, server) {
 
       // Every component will have this
       Vue.mixin({
@@ -51,14 +43,6 @@
           }
         }
       })
-
-      if(opts && opts.auth) {
-        var authentication = require('feathers-authentication/client')
-        var hooks = require('feathers-hooks')
-
-        server.configure(hooks())
-        server.configure(authentication(opts.auth))
-      }
     }
   }
 

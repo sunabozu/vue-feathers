@@ -14,34 +14,25 @@ npm install vue-feathers --save
 ### Usage
 
 ``` js
+// Include and set up feathers client
+const Feathers = require('feathers/client')
+const hooks = require('feathers-hooks')
+const authentication = require('feathers-authentication/client')
+const socketio = require('feathers-socketio/client')
+const io = require('socket.io-client')
+
+const socket = io('http://localhost:3030/')
+const feathers = Feathers()
+.configure(socketio(socket))
+.configure(hooks())
+.configure(authentication({storage: window.localStorage}))
+
 // Include it as a CommonJS module
-var Vue = require('vue')
-var vueFeathers = require('vue-feathers')
+const Vue = require('vue')
+const vueFeathers = require('vue-feathers')
 
 // And plug it in
 Vue.use(vueFeathers)
-```
-
-If you're using hooks on the client, you should include different version of this plugin:
-
-``` js
-var vueFeathers = require('vue-feathers/vue-feathers-hooks')
-```
-
-If you want to use the standard `feather-authentication` plugin, you can just pass the [authentication parameters](http://docs.feathersjs.com/authentication/readme.html#client-side) during the initialisation:
-
-``` js
-Vue.use(vueFeathers, {
-  auth: {storage: window.localStorage}
-})
-```
-
-You can set your own remote host for SocketIO (by default your current host is used):
-
-``` js
-Vue.use(vueFeathers, {
-  host: 'http://api.example.com'
-})
 ```
 
 Now in every component you get a new property called `$services`, which allows you to interact with all of your Feathers services:
