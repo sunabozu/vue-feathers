@@ -32,7 +32,7 @@ const Vue = require('vue')
 const vueFeathers = require('vue-feathers')
 
 // And plug it in
-Vue.use(vueFeathers)
+Vue.use(vueFeathers, feathers)
 ```
 
 Now in every component you get a new property called `$services`, which allows you to interact with all of your Feathers services:
