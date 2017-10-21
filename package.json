@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/sunabozu/vue-feathers#readme",
   "dependencies": {
-    "feathers": "*"
   },
   "devDependencies": {}
 }
